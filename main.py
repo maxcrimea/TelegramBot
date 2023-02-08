@@ -46,7 +46,7 @@ async def picture(message: types.Message):
     with open(f"images/{image}", "rb") as cat:
         await message.answer_photo(
             photo=cat,
-            caption='лови котика'
+            caption='лови котика!'
         )
 
 
