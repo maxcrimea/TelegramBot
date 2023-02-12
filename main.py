@@ -6,7 +6,7 @@ from handlers.start import (
     cmd_help,
 )
 from handlers.products import (
-    products
+    products, catch_products
 )
 
 if __name__ == "__main__":
@@ -15,6 +15,7 @@ if __name__ == "__main__":
     dp.register_message_handler(cmd_help, commands=["help"])
     dp.register_message_handler(picture, commands=["picture"])
     dp.register_message_handler(myinfo, commands=["myinfo"])
-    dp.register_message_handler(products, commands=["products"])
+    dp.register_message_handler(products)
+    dp.register_message_handler(catch_products)
     dp.register_message_handler(echo)
     executor.start_polling(dp)
