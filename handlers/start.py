@@ -7,7 +7,7 @@ async def start(message: types.Message):
         types.InlineKeyboardMarkup(text="Посетите наш веб сайт!",
                                    url="https://geektech.kg"),
         types.InlineKeyboardButton(text="Приходите к нам в гости!",
-                                   url="https://go.2gis.com/9d01se"),
+                                   url="https://go.2gis.com/9d01se")
     ]
     kb = types.InlineKeyboardMarkup(row_width=1)
     kb.add(*buttons)
