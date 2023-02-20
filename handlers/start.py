@@ -4,7 +4,7 @@ from aiogram import types
 async def start(message: types.Message):
     user = message.from_user.first_name
     buttons = [
-        types.InlineKeyboardMarkup(text="Посетите наш веб сайт!",
+        types.InlineKeyboardButton(text="Посетите наш веб сайт!",
                                    url="https://geektech.kg"),
         types.InlineKeyboardButton(text="Приходите к нам в гости!",
                                    url="https://go.2gis.com/9d01se")
