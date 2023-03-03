@@ -14,7 +14,7 @@ async def grafik(message: types.Message):
 с 13:00 до 14:00 обеденный перерыв 
     """,
         reply_markup=get_start_ikb()
-)
+    )
 
 
 async def cmd_product(callback: types.CallbackQuery):

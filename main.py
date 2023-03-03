@@ -1,4 +1,3 @@
-import startup as startup
 from aiogram import executor
 from aiogram.dispatcher.filters import Text
 import logging
@@ -32,7 +31,12 @@ from handlers.products import (
     products, catch_products
 )
 from handlers.admin import check_bad_words, ban_user_warning, ban_user
-from handlers.notifier import process_text
+from handlers.notifier import (
+    NotifierForm,
+    notifier_text,
+    notifier_hour,
+    notifier_minutes
+)
 from handlers.get_products import (
     cmd_product,
     grafik
@@ -56,8 +60,10 @@ if __name__ == "__main__":
     # dp.register_message_handler(process_day, state=UserForm.day)
     # dp.register_callback_query_handler(mail, Text(startswith="да"))
     # dp.register_callback_query_handler(not_mail, Text(startswith="нет"))
-    dp.register_message_handler(process_text, Text(startswith=["напомнить"]))
-    dp.register_callback_query_handler(cmd_product, Text(startswith="get_all"))
+    dp.register_message_handler(notifier_text, Text(startswith=["напомнить"]))
+    dp.register_message_handler(notifier_hour, state=NotifierForm.hour)
+    dp.register_message_handler(notifier_minutes, state=NotifierForm.minutes)
+    dp.register_callback_query_handler(cmd_product, Text(startswith=["get_all"]))
     dp.register_message_handler(start, commands=["start"])
     dp.register_message_handler(grafik, commands=["product"])
     dp.register_message_handler(cmd_help, commands=["help"])
